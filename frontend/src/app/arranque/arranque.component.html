@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h1>Tarea Arranque Análisis de Big Data</h1>
+  <div class="container">
+    <div class="left-side">
+      <form class="custom-form" method="get">
+        <input
+        type="input1"
+        [(ngModel)]="input1"
+        name="input1"
+        placeholder="Nombre del Archivo 1"
+        required="input1"
+        />
+        <input
+        type="input2"
+        [(ngModel)]="input2"
+        name="input2"
+        placeholder="Nombre del Archivo 2"
+        required="input2"
+        />
+        <input
+        type="input3"
+        [(ngModel)]="input3"
+        name="input3"
+        placeholder="Nombre del Archivo 3"
+        required="input3"
+        />
+        <input
+        type="numero_palabras"
+        [(ngModel)]="numero_palabras"
+        name="numero_palabras"
+        placeholder="Numero de Palabras mas Repetidas"
+        required="numero_palabras"
+        />
+      <button type="submit" (click)="resultados()">Enviar</button>
+      <!--<div class="result-box">Las palabras más repetidas son:{{respuesta}}</div>-->
+      <div class="result-box">
+        <p *ngFor="let resultado of respuesta; let i = index">
+          {{resultado}}
+          <ng-container *ngIf = "i < respuesta.length - 1"> Esta es la siguiente resupesta: </ng-container>
+        </p>
+
+      </div>
+      <p></p>
+      </form>
+    </div>
+    <div class="right-side">
+      <div *ngFor="let nombre of nombresArchivos">{{ nombre }}</div>
+      <!--<div class="lista-archivos">Archivos</div>-->
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.left-side {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.right-side {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.input-box {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.result-box {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  height: auto;
+  overflow-y: scroll;
+
+}
+
+.lista-archivos {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
