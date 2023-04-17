@@ -1,0 +1,32 @@
+.header {
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.links {
+  margin-top: 10px; /* Add margin for spacing */
+  list-style-type: none; /* Remove the default bullet points from the list */
+  padding: 0; /* Reset padding for the list */
+}
+
+.link-item {
+  display: inline-block; /* Set the link items to display inline */
+  margin-right: 40px; /* Add margin for spacing between link items */
+}
+
+.link-item a {
+  text-decoration: none; /* Remove underline from link */
+}
+
+.link-item h1 {
+  font-size: 20px; /* Set the font size for the link item */
+  font-weight: bold; /* Set the font weight for the link item */
+  color: #3829bb; /* Set the font color for the link item */
+  margin: 0; /* Reset the margin for the link item */
+}

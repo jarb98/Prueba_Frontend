@@ -4,6 +4,7 @@ from flask_restful import Resource
 from bs4 import BeautifulSoup
 import numpy as np
 from collections import Counter
+
 import os
 
 noticia_schema = NoticiaSchema()
@@ -11,7 +12,8 @@ noticia_schema = NoticiaSchema()
 class VistaNoticia(Resource): 
     #Get Method para llenar la lista de archivos de los que el usuario va a seleccionar
     def get(self):
-        directory = '../archivos'
+        #directory = '../archivos', lo cambio para ver si sirve en docker. Primero en localhost
+        directory = '/app/archivos'
         files = os.listdir(directory)
         return jsonify(files)
 #Clase que es llamada por el api para sacar los resultados de los retos
@@ -33,7 +35,8 @@ class VistaResultados (Resource):
                 print("u_nombre esta vacio")
             else: 
                 print (u_nombre)
-                directorio = "../archivos/" + u_nombre
+                #directory = '../archivos', lo cambio para ver si sirve en docker. Primero en localhost
+                directorio = "/app/archivos/" + u_nombre
                 try: 
                     if (u_nombre[-4:]==".txt"):
                         doc_1=open(directorio,"r").readlines()
@@ -58,4 +61,47 @@ class VistaResultados (Resource):
         return resultados
 
 
+
+class VistaTaller1Opcion1 (Resource):
+#Retorna un resumen de los valores de barcos en fechas especificadas
+#Conexion a Atlas -> Agrupamiento -> Retorno tabla
+    def post(self):
+        startDate = request.json["startDate"]
+        endDate = request.json["endDate"]
+
+        print(startDate)
+        print(endDate)
+        
+        return 'Opcion1 funciona ok'
+
+class VistaTaller1Opcion2(Resource):
+#Retorna un resumen de los valores de barcos en fechas especificadas por tipo de carga
+
+    def post(self):
+        startDate = request.json["startDate"]
+        endDate = request.json["endDate"]
+        estado = request.json["estado"]
+
+
+        return 'Opcion2 funciona ok'
+    
+
+class VistaTaller1Opcion3(Resource):
+#Retorna un analisis de lo ocurrido en pandemia 
+
+
+    def post(self):
+
+
+
+        return 'Opcion3 funciona ok'
+    
+class VistaTaller1Opcion4(Resource):
+    def post(self):
+        startDate = request.json["startDate"]
+        endDate = request.json["endDate"]
+
+
+
+        return 'Opcion4 funciona ok'
 

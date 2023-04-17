@@ -1,0 +1,52 @@
+<p>
+  Seleccione una opcion
+</p>
+<div class="menu">
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="menu-label">Calculos disponibles:  </label>
+  <ul class="menu-items">
+    <li><a href="/taller1" (click)="onOptionClick(1, $event)">Estado con mayor tráfico de botes en un periodo</a></li>
+    <li><a href="/taller1" (click)="onOptionClick(2, $event)">Tipo comun de carga mas comun por estado</a></li>
+    <li><a href="/taller1" (click)="onOptionClick(3, $event)">Analisis Pandemia</a></li>
+    <li><a href="/taller1" (click)="onOptionClick(4, $event)">Distribucion Geografica de botes por periodo para un periodo dado</a></li>
+    <li><a href="/taller1" (click)="onOptionClick(5, $event)">Relación entre variables</a></li>
+
+  </ul>
+</div>
+<p>{{ optionClicked }}</p>
+
+<div *ngIf="optionClicked === 'Estado con mayor tráfico de botes en un periodo'">
+  <label>Seleccione un período:</label>
+  <input type="date" [(ngModel)]="startDate">
+  <input type="date" [(ngModel)]="endDate">
+  <button type="submit" (click)="resultados_taller_opcion1()">Enviar</button>
+</div>
+
+<div *ngIf="optionClicked === 'Tipo comun de carga mas comun por estado'">
+  <label>Seleccione un período:</label>
+  <input type="date" [(ngModel)]="startDate">
+  <input type="date" [(ngModel)]="endDate">
+  <label>Estado</label>
+  <input type="text" [(ngModel)]="text1">
+  <button type="submit" (click)="resultados_taller_opcion1()">Enviar</button>
+
+
+</div>
+
+<div *ngIf="optionClicked === 'Analisis Pandemia'">
+  <label>Los efectos de la pandemia en el trafico maritimo de botes se puede observar de la siguiente manera</label>
+
+</div>
+
+<div *ngIf="optionClicked === 'Distribucion Geografica de botes por periodo para un periodo dado'">
+  <label>Seleccione un período:</label>
+  <input type="date" [(ngModel)]="startDate">
+  <input type="date" [(ngModel)]="endDate">
+  <button type="submit" (click)="resultados_taller_opcion4()">Enviar</button>
+
+</div>
+
+<div *ngIf="optionClicked === 'Relación entre variables'">
+  <label>Relacion entre variables</label>
+
+</div>

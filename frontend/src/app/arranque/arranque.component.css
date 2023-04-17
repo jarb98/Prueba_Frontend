@@ -42,3 +42,8 @@
   height: calc(100% - 40px);
   overflow-y: auto;
 }
+
+.header {
+  padding: 20px;
+  text-align: center;
+}
